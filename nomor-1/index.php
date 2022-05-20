@@ -1,6 +1,16 @@
 <?php
-$contents = file_get_contents("http://www.omdbapi.com?apikey=1e7d4dbb&s=x-men");
-$contents = json_decode($contents, true);
+function cURL($url)
+{
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $output = curl_exec($ch);
+    curl_close($ch);
+    return $output;
+}
+
+$url = "http://www.omdbapi.com?apikey=1e7d4dbb&s=x-men";
+$arrays = json_decode(cURL($url), true);
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +19,7 @@ $contents = json_decode($contents, true);
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=280, initial-scale=1.0">
+    <meta name="viewport" content="width=300px, initial-scale=1.0">
     <title>All X-Men Movies</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -19,26 +29,26 @@ $contents = json_decode($contents, true);
         <h1>All X-Men Movies</h1>
     </header>
     <main>
-        <?php foreach ($contents["Search"] as $content) : ?>
+        <?php foreach ($arrays["Search"] as $array) : ?>
             <div class="card">
-                <img src="<?php echo $content['Poster']; ?>" alt="Poster" class="image">
+                <img src="<?= $array['Poster']; ?>" alt="Poster" class="image">
                 <div class="detail">
                     <table>
                         <tr>
                             <td>Title</td>
-                            <td>: <?php echo $content['Title']; ?></td>
+                            <td>: <?= $array['Title']; ?></td>
                         </tr>
                         <tr>
                             <td>Year</td>
-                            <td>: <?php echo $content['Year']; ?></td>
+                            <td>: <?= $array['Year']; ?></td>
                         </tr>
                         <tr>
                             <td>Type</td>
-                            <td>: <?php echo ucwords($content['Type']); ?></td>
+                            <td>: <?= ucwords($array['Type']); ?></td>
                         </tr>
                         <tr>
                             <td>IMDb ID</td>
-                            <td>: <?php echo $content['imdbID']; ?></td>
+                            <td>: <?= $array['imdbID']; ?></td>
                         </tr>
                     </table>
                 </div>

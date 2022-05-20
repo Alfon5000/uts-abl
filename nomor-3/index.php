@@ -1,6 +1,7 @@
 <?php
 $file_json = file_get_contents("karyawan.json");
 $data_karyawan = json_decode($file_json, true);
+$data_karyawan = array_values($data_karyawan);
 ?>
 
 <!DOCTYPE html>
@@ -8,39 +9,13 @@ $data_karyawan = json_decode($file_json, true);
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=280px, initial-scale=1.0">
+    <meta name="viewport" content="width=300px, initial-scale=1.0">
     <title>Tabel Karyawan</title>
-    <style>
-        h2 {
-            text-align: center;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-
-        table {
-            margin: auto;
-        }
-
-        table,
-        th,
-        td {
-            border: 1px solid black;
-        }
-
-        th {
-            background-color: gray;
-        }
-
-        tr,
-        th,
-        td {
-            padding: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h2>Tabel Karyawan</h2>
+    <h3>Tabel Karyawan</h3>
     <table>
         <tr>
             <th>Id</th>
