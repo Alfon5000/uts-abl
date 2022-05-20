@@ -1,0 +1,39 @@
+{
+    "Karyawan": [
+        {
+            "ID": "K01",
+            "Nama": "Prita",
+            "Jenis_Kelamin": "Perempuan",
+            "Golongan": "IVA",
+            "Alamat": "Jalan Kencana Jakarta"
+        },
+        {
+            "ID": "K02",
+            "Nama": "Budi Hidayat",
+            "Jenis_Kelamin": "Laki-laki",
+            "Golongan": "IVA",
+            "Alamat": "Jalan Anggrek Sulawesi"
+        },
+        {
+            "ID": "K03",
+            "Nama": "Rahman",
+            "Jenis_Kelamin": "Laki-laki",
+            "Golongan": "IVA",
+            "Alamat": "Jalan Melati Kalimantan"
+        },
+        {
+            "ID": "K04",
+            "Nama": "Putri Lestari",
+            "Jenis_Kelamin": "Perempuan",
+            "Golongan": "IVC",
+            "Alamat": "Jalan Diponegoro Jawa Barat"
+        },
+        {
+            "ID": "K05",
+            "Nama": "John",
+            "Jenis_Kelamin": "Laki-laki",
+            "Golongan": "IVD",
+            "Alamat": "Jalan Delima Papua"
+        }
+    ]
+}
