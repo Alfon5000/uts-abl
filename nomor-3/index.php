@@ -25,13 +25,12 @@ $data_karyawan = array_values($data_karyawan);
             <th>Alamat</th>
         </tr>
         <?php foreach ($data_karyawan as $karyawan) : ?>
-            <?php foreach ($karyawan as $data) : ?>
-                <tr>
-                    <?php foreach ($data as $dt) : ?>
-                        <?= "<td>$dt</td>"; ?>
-                    <?php endforeach; ?>
-                </tr>
-            <?php endforeach; ?>
+            <tr>
+                <?php foreach ($karyawan as $data) : ?>
+                    <?= "<td>$data</td>"; ?>
+                <?php endforeach; ?>
+
+            </tr>
         <?php endforeach; ?>
     </table>
 </body>
